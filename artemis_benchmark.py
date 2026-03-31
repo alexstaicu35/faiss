@@ -279,8 +279,12 @@ def main():
     print("\nRunning C++ kernel microbenchmarks...")
     run_cpp_perf_tests(results)
 
+    numeric_results = [
+        {k: v for k, v in row.items() if isinstance(v, (int, float))}
+        for row in results
+    ]
     with open(OUTPUT_FILE, "w") as f:
-        json.dump(results, f, indent=2)
+        json.dump(numeric_results, f, indent=2)
 
     print(f"\nWrote {len(results)} rows to {OUTPUT_FILE}")
 
