@@ -27,7 +27,7 @@ OUTPUT_FILE = os.path.join(SCRIPT_DIR, "artemis_results.json")
 
 SIFT1M_DIR = os.environ.get(
     "SIFT1M_DIR",
-    os.path.join(SCRIPT_DIR, "data", "sift"),
+    "/home/alexandru/PycharmProjects/faiss/data/sift",
 )
 
 NUM_THREADS = faiss.omp_get_max_threads()
